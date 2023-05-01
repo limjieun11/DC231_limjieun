@@ -7,6 +7,7 @@
 .section {
   /* background-color: red; */
 }
+
 .container {
   --px: 36px;
   /* background-color: green; */
@@ -14,6 +15,7 @@
   margin-inline: auto;
   padding-inline: var(--px);
 }
+
 .wrapper {
   /* background-color: blue; */
   padding-block: 32px;
