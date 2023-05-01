@@ -139,6 +139,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  margin: 8px;
 }
 
 #hero1 {
@@ -187,12 +188,12 @@
   margin-bottom: 16px;
 }
 #hero2 p {
-  max-width: 40ch;
+  max-width: 470px;
   margin-block: 24px 32px;
   font-family: "Nanum Pen Script", cursive;
-  font-size: x-large;
+  font-size: xx-large;
 }
-@media (width < 53.125rem) {
+@media (width < 65.625rem) {
   #hero2 .wrapper {
     display: block;
     text-align: center;
