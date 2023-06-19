@@ -6,7 +6,6 @@ const whenBtnIsClicked = (e) => {
     document.querySelector(link);
   scrollToTarget.scrollIntoView();
 };
-console.log(btns);
 const btnsLinks = new Map();
 btns.forEach((eachBtn) => {
   const link = eachBtn.getAttribute("href");
@@ -17,8 +16,6 @@ btns.forEach((eachBtn) => {
     whenBtnIsClicked
   );
 });
-
-console.log(btnsLinks);
 
 const pages = document.querySelectorAll(
   "main section"

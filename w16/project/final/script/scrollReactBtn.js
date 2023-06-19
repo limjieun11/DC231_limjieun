@@ -1,12 +1,9 @@
 const observingTargets =
   document.querySelectorAll("main section");
-// console.log(observingTargets);
-
 const toggleTargets =
   document.querySelectorAll("aside>ol>a");
-// console.log(toggleTargets);
-
 const pageBtnMap = new Map();
+
 const setPageBtnMap = () => {
   observingTargets.forEach((eachTargets, idx) => {
     pageBtnMap.set(
@@ -16,7 +13,6 @@ const setPageBtnMap = () => {
   });
 };
 setPageBtnMap();
-// console.log(pageBtnMap);
 
 let lastBtn;
 
@@ -34,34 +30,30 @@ const visualizingMargin = () => {
     "position: fixed; bottom: " +
     margin[1].substring(1) +
     "; left: 0; right: 0; height: 1px; background-color: green; z-index:999;";
-
   document.body.append(topMargin);
   document.body.append(bottomMargin);
 };
 
-// visualizingMargin();
-
-const whenTargetInview = (entities, observer) => {
+const whenTargetInView = (entities, observer) => {
   entities.forEach((eachEntity) => {
     if (eachEntity.isIntersecting) {
-      //   console.log("isIn!", eachEntity.target);
+      console.log("isIn!", eachEntity.target);
       const pairedTarget = pageBtnMap.get(
         eachEntity.target
       );
-      console.log(pairedTarget);
       const finalTarget =
         pairedTarget.querySelector("li");
       finalTarget.classList.add("pressed");
       lastBtn?.classList.remove("pressed");
       lastBtn = finalTarget;
     } else {
-      //   console.log("isOut!", eachEntity.target);
+      console.log("isOut!", eachEntity.target);
     }
   });
 };
 
 const observer = new IntersectionObserver(
-  whenTargetInview,
+  whenTargetInView,
   {
     root: null,
     rootMargin:

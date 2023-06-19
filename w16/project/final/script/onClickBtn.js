@@ -1,8 +1,7 @@
 const btns =
   document.querySelectorAll("aside>ol>a");
-
 console.log(btns);
-let lastBtn;
+let lastBtns;
 
 const whenIClickTheBtn = (e) => {
   console.log("target", e.target);
@@ -11,13 +10,8 @@ const whenIClickTheBtn = (e) => {
     e.currentTarget.querySelector("li");
   console.log("toggleTarget", toggleTarget);
   toggleTarget.classList.add("pressed");
-  //   초보의 if 구문 활용을 통한 해결
-  //   if (lastBtn !== undefined) {
-  //     lastBtn.classList.remove("pressed")
-  //   }
-  // 옵셔널 체이닝을 이용한 간지나는 해결
-  lastBtn?.classList.remove("pressed");
-  lastBtn = toggleTarget;
+  lastBtns?.classList.remove("pressed");
+  lastBtns = toggleTarget;
 };
 
 btns.forEach((eachBtn) => {
